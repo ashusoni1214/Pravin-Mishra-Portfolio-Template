@@ -20,7 +20,7 @@ This repository contains a clean, professional-looking **static portfolio websit
 A portfolio-style website hosted on:
 - **Ubuntu VM**
 - **Nginx**
-- Accessible via: `http://<public-ip>`
+- Accessible via: `http://54.145.12.194/`
 
 ---
 
@@ -36,7 +36,27 @@ Original:
 Add this line (example):
 
 ```html
-<p><strong>Deployed by:</strong> DMI Cohort 2 | Rahul Sharma | Group 4 | Week 1 | 16-01-2026</p>
+ <p> Pravin Mishra Portfolio v1.0 — <span id="deployDate">Deployed on 04 Feb 2026</span> —By Ashu Soni</p>
+
+ SPRINT 1 - 
+ Added footer feature 
+ Added dynamic date generated using Javascript
+
+<script>
+        const d = new Date();
+
+        const options = {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  };
+
+  const formattedDate = d.toLocaleDateString('en-GB', options);
+
+  document.getElementById("deployDate").textContent = formattedDate;
+</script>
+
 ```
+
 
 ✅ This proof must be visible in your browser screenshot submission.
