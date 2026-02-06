@@ -603,24 +603,84 @@
       </div>
 
       <!-- Bottom -->
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> Pravin Mishra. All rights reserved.</p>
-        <p>Crafted with <span>cloud</span> excellence by Pravin Mishra</p>
-      </div>
+      <!-- Bottom -->
+<div class="footer-bottom">
+  <p>© <span id="year"></span> Pravin Mishra. All rights reserved.</p>
+  <p>Crafted with <span>cloud</span> excellence by Pravin Mishra</p>
+  <p>
+    Pravin Mishra Portfolio v1.0 —
+    <span id="deployDate"></span> — By ASHU SONI
+  </p>
+</div>
 
-    </div>
-  </footer>
+</footer>
 
-<footer
-	style="text-align: center; padding: 30px 20px; background-color: #212529; color: #f8f9fa; margin-top: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-	<p style="font-size: 1rem; margin: 0;"> Pravin Mishra Portfolio v1.0 — Deployed on <span id="deployDate"></span> — By ASHU SONI </p>
-	</footer>
-	<script>
-		const today = new Date();
-		const dateOptions = { day: 'numeric', month: 'short', year: 'numeric' };
-		document.getElementById('deployDate').innerText = today.toLocaleDateString('en-GB', dateOptions);
-	</script>
+<!-- ✅ Paste Script Here -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    /* Dynamic Date */
+    const today = new Date();
+
+    const options = {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    };
+
+    const formattedDate = today.toLocaleDateString('en-IN', options);
+
+    const deploySpan = document.getElementById("deployDate");
+
+    if (deploySpan) {
+      deploySpan.textContent = "Deployed on " + formattedDate;
+    }
+/* Highlight Author Name */
+const author = document.getElementById("authorName");
+
+if (author) {
+  author.style.color = "#4da3ff";
+  author.style.fontWeight = "600";
+  author.style.letterSpacing = "0.5px";
+}
+
+    /* Footer Styling */
+    const footerBottom = document.querySelector(".footer-bottom");
+
+    if (!footerBottom) return;
+
+    footerBottom.style.display = "flex";
+    footerBottom.style.flexDirection = "column";
+    footerBottom.style.alignItems = "center";
+    footerBottom.style.textAlign = "center";
+
+    footerBottom.style.padding = "24px 16px";
+    footerBottom.style.gap = "8px";
+
+    footerBottom.style.backgroundColor = "#111";
+    footerBottom.style.color = "#f5f5f5";
+
+    footerBottom.style.fontSize = "14px";
+    footerBottom.style.lineHeight = "1.6";
+
+    footerBottom.style.borderTop = "1px solid rgba(255,255,255,0.15)";
+
+    /* Mobile Support */
+    function handleResize() {
+      if (window.innerWidth < 600) {
+        footerBottom.style.fontSize = "13px";
+        footerBottom.style.padding = "20px 12px";
+      } else {
+        footerBottom.style.fontSize = "14px";
+        footerBottom.style.padding = "24px 16px";
+      }
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+  });
+</script>
 
 </body>
-
 </html>
